@@ -1,1 +1,28 @@
+Iterative Method:
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        res=[]
+        stack=[]
+        temp=root
+        while temp or stack:
+            while temp:
+                stack.append(temp)
+                temp=temp.left
+            temp=stack.pop()
+            res.append(temp.val)
+            temp=temp.right
+        return res
 
+
+Recursive Method:
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        def helper(root,res):
+            if root!=None:
+                helper(root.left,res)
+                res.append(root.val)
+                helper(root.right,res)
+        
+        res=[]
+        helper(root,res)
+        return res
