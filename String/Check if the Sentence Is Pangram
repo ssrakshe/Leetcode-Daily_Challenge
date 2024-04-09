@@ -1,0 +1,10 @@
+class Solution:
+    def checkIfPangram(self, sentence: str) -> bool:
+        myabcd='abcdefghijklmnopqrstuvwxyz'
+        my_sentence=list(set(sentence))
+        my_sentence.sort()
+        mmy_sentence="".join(my_sentence)
+        if mmy_sentence==myabcd:
+            return True
+        else:
+            return False
