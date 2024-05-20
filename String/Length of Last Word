@@ -7,3 +7,12 @@ class Solution:
             length+=1
             i-=1
         return length
+
+
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        ss = s.strip()
+        print(ss)
+        a = ss.split(" ")
+        print(a)
+        return len(a[-1])
