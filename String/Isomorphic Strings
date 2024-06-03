@@ -1,0 +1,9 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        p,q={},{}
+        for c1,c2 in zip(s,t):
+            if((c1 in p and p[c1]!=c2)) or((c2 in q and q[c2]!=c1)):
+                return False
+            p[c1]=c2
+            q[c2]=c1
+        return True
