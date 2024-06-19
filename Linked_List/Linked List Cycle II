@@ -1,0 +1,13 @@
+class Solution:
+    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head==None:
+            return head
+        
+        visited=[]
+        p=head
+        while p:
+            if p in visited:
+                return p
+            else:
+                visited.append(p)
+                p=p.next
