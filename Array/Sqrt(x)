@@ -1,0 +1,18 @@
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        if x == 0:
+            return x
+        l=1
+        r=x
+        prev_mid = -1
+        while l <= r:
+            mid=(l+r)//2
+            squared = mid * mid
+            if squared == x:
+                return mid
+            elif squared < x:
+                prev_mid = mid
+                l = mid + 1
+            else:
+                r = mid - 1
+            
