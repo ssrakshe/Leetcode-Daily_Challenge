@@ -1,0 +1,11 @@
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        p={}
+        
+        for i,k in enumerate(arr):
+            if k in p:
+                p[k]+= 1
+            else:
+                p[k]= 1
+        nums=list(p.values())
+        return len(nums) == len(set(nums))
